@@ -23,6 +23,6 @@ typedef void(^FinishBlcok)(UIImage *);
 //定义一个类方法，用于根据外界传递的数据来实例化响应的实例
 +(instancetype)DownLoadImageWith:(NSString *)imageStr andBlock:(FinishBlcok)finishBlcok;
 
-
+@property (nonatomic,assign)BOOL cancelHasDone;
 
 @end
