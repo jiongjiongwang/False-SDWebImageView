@@ -77,11 +77,14 @@ static id instance;
         
     }];
     
-    //将操作加入到操作缓存中
-    [self.operationDict setObject:downLoadImg forKey:imgStr];
     
     //(4)将操作加入到队列中
     [self.queue addOperation:downLoadImg];
+    
+    //将操作加入到操作缓存中
+    [self.operationDict setObject:downLoadImg forKey:imgStr];
+    
+    
 }
 
 //提供取消下载服务
@@ -90,6 +93,8 @@ static id instance;
     //开启取消图片下载服务
     //取消之前的操作
     //(1)根据_currentIcon信息从操作缓存中取出之前的操作
+    
+    
     DownLoadImage *oldOperation = self.operationDict[imgStr];
     
     //如果存在
@@ -97,10 +102,6 @@ static id instance;
     {
         //取消之前旧的操作
         oldOperation.cancelHasDone = YES;
-    }
-    else
-    {
-        NSLog(@"操作已经被删除，无法取消操作");
     }
 }
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C685F3B1D0E78A1009D8EA6 /* DownLoadImgManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C685F3A1D0E78A1009D8EA6 /* DownLoadImgManager.m */; };
+		4C685F421D0EC0C5009D8EA6 /* UIImageView+DownLoadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C685F411D0EC0C5009D8EA6 /* UIImageView+DownLoadImage.m */; };
 		4CF815481D0D1391002FA4E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF815471D0D1391002FA4E7 /* main.m */; };
 		4CF8154B1D0D1391002FA4E7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF8154A1D0D1391002FA4E7 /* AppDelegate.m */; };
 		4CF8154E1D0D1391002FA4E7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF8154D1D0D1391002FA4E7 /* ViewController.m */; };
@@ -22,6 +23,8 @@
 /* Begin PBXFileReference section */
 		4C685F391D0E78A1009D8EA6 /* DownLoadImgManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoadImgManager.h; sourceTree = "<group>"; };
 		4C685F3A1D0E78A1009D8EA6 /* DownLoadImgManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownLoadImgManager.m; sourceTree = "<group>"; };
+		4C685F401D0EC0C5009D8EA6 /* UIImageView+DownLoadImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+DownLoadImage.h"; sourceTree = "<group>"; };
+		4C685F411D0EC0C5009D8EA6 /* UIImageView+DownLoadImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+DownLoadImage.m"; sourceTree = "<group>"; };
 		4CF815431D0D1391002FA4E7 /* 模拟SDWebImageView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "模拟SDWebImageView.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF815471D0D1391002FA4E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4CF815491D0D1391002FA4E7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -81,6 +84,15 @@
 			name = Other;
 			sourceTree = "<group>";
 		};
+		4C685F3F1D0EC086009D8EA6 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				4C685F401D0EC0C5009D8EA6 /* UIImageView+DownLoadImage.h */,
+				4C685F411D0EC0C5009D8EA6 /* UIImageView+DownLoadImage.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
 		4CF8153A1D0D1391002FA4E7 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +112,7 @@
 		4CF815451D0D1391002FA4E7 /* 模拟SDWebImageView */ = {
 			isa = PBXGroup;
 			children = (
+				4C685F3F1D0EC086009D8EA6 /* Category */,
 				4C685F3D1D0E79FF009D8EA6 /* Other */,
 				4C685F3C1D0E79EC009D8EA6 /* Controller */,
 				4C685F381D0E7838009D8EA6 /* Manager */,
@@ -211,6 +224,7 @@
 			files = (
 				4CF8154E1D0D1391002FA4E7 /* ViewController.m in Sources */,
 				4C685F3B1D0E78A1009D8EA6 /* DownLoadImgManager.m in Sources */,
+				4C685F421D0EC0C5009D8EA6 /* UIImageView+DownLoadImage.m in Sources */,
 				4CF815601D0D13E7002FA4E7 /* DownLoadImage.m in Sources */,
 				4CF815661D0D151B002FA4E7 /* AppModel.m in Sources */,
 				4CF8154B1D0D1391002FA4E7 /* AppDelegate.m in Sources */,

@@ -28,7 +28,7 @@
 {
     
     //网络延时
-   //[NSThread sleepForTimeInterval:1];
+   [NSThread sleepForTimeInterval:1];
 
     
    //(1)NSURL
@@ -36,6 +36,8 @@
     
     //(2)NSData
     NSData *data = [NSData dataWithContentsOfURL:url];
+    
+
     
 #warning 因为[NSData dataWithContentsOfURL:url]是一个耗时任务，故在此任务完成之后开始拦截操作
     if (self.cancelHasDone)

@@ -8,7 +8,8 @@
 
 #import "ViewController.h"
 #import "AppModel.h"
-#import "DownLoadImgManager.h"
+#import "UIImageView+DownLoadImage.h"
+
 
 @interface ViewController ()
 
@@ -16,10 +17,6 @@
 
 @property (nonatomic,strong)NSArray<AppModel *> *dataArray;
 
-
-
-//定义一个字符串，用于存放已经执行的操作的downLoad信息
-@property (nonatomic,copy)NSString *currentIcon;
 
 
 @end
@@ -62,26 +59,8 @@
     AppModel *model = self.dataArray[num];
     
     
-    
-    //如何判断之前是否点击:变量记录之前图片下载地址,再次点击,生成新的下载地址,判断之前的地址与当前modleicon地址石头一致,如果不同->之前一定是点击过的
-    if (!([_currentIcon isEqualToString:model.icon]))
-    {
-        
-        //开启取消图片下载服务
-        [[DownLoadImgManager shardManager] cancelDownWithImgStr:_currentIcon];
-    }
-    
-    //更新_currentIcon信息
-    _currentIcon = model.icon;
-    
-    
-    //开启下载图片服务
-    [[DownLoadImgManager shardManager] DownloadImgWithImgStr:model.icon andBlock:^(UIImage *image) {
-       
-        self.showImage.image = image;
-    }];
-    
-
+    //启动下载图片更新到showImage的任务
+    [self.showImage DownLoadImageWithUrlStr:model.icon];
 }
 
 
