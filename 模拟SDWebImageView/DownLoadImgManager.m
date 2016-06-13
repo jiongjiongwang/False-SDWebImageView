@@ -8,6 +8,8 @@
 
 #import "DownLoadImgManager.h"
 #import "DownLoadImage.h"
+#import "NSString+Path.h"
+
 
 @interface DownLoadImgManager()
 
@@ -17,6 +19,9 @@
 
 //定义一个操作缓存字典
 @property (nonatomic,strong)NSMutableDictionary *operationDict;
+
+//定义一个图片缓存字典
+@property (nonatomic,strong)NSMutableDictionary *imageDict;
 
 
 @end
@@ -64,9 +69,51 @@ static id instance;
     return _operationDict;
 }
 
+//懒加载图片缓存字典
+-(NSMutableDictionary *)imageDict
+{
+    if (!_imageDict)
+    {
+        _imageDict = [NSMutableDictionary dictionary];
+    }
+    
+    return _imageDict;
+}
+
 //提供下载服务
 -(void)DownloadImgWithImgStr:(NSString *)imgStr andBlock:(FinishBlcok)finishBlcok
 {
+    
+    //从内存或沙盒中获取当前imgStr对应的图片是否存在
+    UIImage *cacheImage = self.imageDict[imgStr];
+    
+    //内存缓存中时候存在
+    if (cacheImage)
+    {
+        NSLog(@"从内存中获取图片%@",imgStr);
+        
+        finishBlcok(cacheImage);
+        
+        return;
+    }
+    //沙盒中是否存在
+    else
+    {
+        UIImage *sandBoxImage = [UIImage imageWithContentsOfFile:[imgStr appendCachePath]];
+        if (sandBoxImage)
+        {
+            NSLog(@"从沙盒中获取图片%@",imgStr);
+            
+            finishBlcok(sandBoxImage);
+            
+            //性能优化
+            [self.imageDict setObject:sandBoxImage forKey:imgStr];
+            return;
+        }
+    }
+    
+    
+    
     //(3)根据数据信息，把数据信息填入到操作中，生成新的操作
     DownLoadImage *downLoadImg = [DownLoadImage DownLoadImageWith:imgStr andBlock:^(UIImage *image) {
         
@@ -74,6 +121,9 @@ static id instance;
         
         //将操作从缓存字典中删除掉
         [self.operationDict removeObjectForKey:imgStr];
+        
+        //将图片存放到缓存字典中
+        [self.imageDict setObject:image forKey:imgStr];
         
     }];
     

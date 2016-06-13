@@ -7,6 +7,8 @@
 //
 
 #import "DownLoadImage.h"
+#import "NSString+Path.h"
+
 
 @implementation DownLoadImage
 
@@ -37,7 +39,9 @@
     //(2)NSData
     NSData *data = [NSData dataWithContentsOfURL:url];
     
-
+    //存沙盒
+    [data writeToFile:[self.imageStr appendCachePath] atomically:YES];
+    
     
 #warning 因为[NSData dataWithContentsOfURL:url]是一个耗时任务，故在此任务完成之后开始拦截操作
     if (self.cancelHasDone)
