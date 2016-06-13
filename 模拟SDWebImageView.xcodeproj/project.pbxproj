@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C685F3B1D0E78A1009D8EA6 /* DownLoadImgManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C685F3A1D0E78A1009D8EA6 /* DownLoadImgManager.m */; };
 		4CF815481D0D1391002FA4E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF815471D0D1391002FA4E7 /* main.m */; };
 		4CF8154B1D0D1391002FA4E7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF8154A1D0D1391002FA4E7 /* AppDelegate.m */; };
 		4CF8154E1D0D1391002FA4E7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF8154D1D0D1391002FA4E7 /* ViewController.m */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C685F391D0E78A1009D8EA6 /* DownLoadImgManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoadImgManager.h; sourceTree = "<group>"; };
+		4C685F3A1D0E78A1009D8EA6 /* DownLoadImgManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownLoadImgManager.m; sourceTree = "<group>"; };
 		4CF815431D0D1391002FA4E7 /* 模拟SDWebImageView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "模拟SDWebImageView.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF815471D0D1391002FA4E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4CF815491D0D1391002FA4E7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -47,6 +50,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C685F381D0E7838009D8EA6 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				4C685F391D0E78A1009D8EA6 /* DownLoadImgManager.h */,
+				4C685F3A1D0E78A1009D8EA6 /* DownLoadImgManager.m */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
+		4C685F3C1D0E79EC009D8EA6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4CF8154C1D0D1391002FA4E7 /* ViewController.h */,
+				4CF8154D1D0D1391002FA4E7 /* ViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		4C685F3D1D0E79FF009D8EA6 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				4CF815491D0D1391002FA4E7 /* AppDelegate.h */,
+				4CF8154A1D0D1391002FA4E7 /* AppDelegate.m */,
+				4CF8154F1D0D1391002FA4E7 /* Main.storyboard */,
+				4CF815521D0D1391002FA4E7 /* Assets.xcassets */,
+				4CF815541D0D1391002FA4E7 /* LaunchScreen.storyboard */,
+				4CF815571D0D1391002FA4E7 /* Info.plist */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
 		4CF8153A1D0D1391002FA4E7 = {
 			isa = PBXGroup;
 			children = (
@@ -66,16 +100,11 @@
 		4CF815451D0D1391002FA4E7 /* 模拟SDWebImageView */ = {
 			isa = PBXGroup;
 			children = (
+				4C685F3D1D0E79FF009D8EA6 /* Other */,
+				4C685F3C1D0E79EC009D8EA6 /* Controller */,
+				4C685F381D0E7838009D8EA6 /* Manager */,
 				4CF815631D0D150C002FA4E7 /* Model */,
 				4CF8155D1D0D13B2002FA4E7 /* Operation */,
-				4CF815491D0D1391002FA4E7 /* AppDelegate.h */,
-				4CF8154A1D0D1391002FA4E7 /* AppDelegate.m */,
-				4CF8154C1D0D1391002FA4E7 /* ViewController.h */,
-				4CF8154D1D0D1391002FA4E7 /* ViewController.m */,
-				4CF8154F1D0D1391002FA4E7 /* Main.storyboard */,
-				4CF815521D0D1391002FA4E7 /* Assets.xcassets */,
-				4CF815541D0D1391002FA4E7 /* LaunchScreen.storyboard */,
-				4CF815571D0D1391002FA4E7 /* Info.plist */,
 				4CF815461D0D1391002FA4E7 /* Supporting Files */,
 			);
 			path = "模拟SDWebImageView";
@@ -181,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CF8154E1D0D1391002FA4E7 /* ViewController.m in Sources */,
+				4C685F3B1D0E78A1009D8EA6 /* DownLoadImgManager.m in Sources */,
 				4CF815601D0D13E7002FA4E7 /* DownLoadImage.m in Sources */,
 				4CF815661D0D151B002FA4E7 /* AppModel.m in Sources */,
 				4CF8154B1D0D1391002FA4E7 /* AppDelegate.m in Sources */,
@@ -333,6 +363,7 @@
 				4CF8155C1D0D1391002FA4E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

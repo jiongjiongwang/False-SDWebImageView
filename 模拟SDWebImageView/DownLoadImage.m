@@ -28,7 +28,7 @@
 {
     
     //网络延时
-    [NSThread sleepForTimeInterval:1];
+   //[NSThread sleepForTimeInterval:1];
 
     
    //(1)NSURL
